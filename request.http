@@ -1,0 +1,57 @@
+### add new user with the profile.
+POST http://localhost:3000/v1/users
+Content-Type: application/json
+
+{
+    "name": "ahmad",
+    "email": "ahmad123@mail.com",
+    "password": "123",
+    "identity_type": "KTP",
+    "identity_number": "1231208891239",
+    "address": "Jalan Ir. Juanda"
+}
+
+### get all user
+GET http://localhost:3000/v1/users
+
+### get user by id
+GET http://localhost:3000/v1/users/1
+
+
+
+### add new account to an existing user
+POST http://localhost:3000/v1/accounts
+Content-Type: application/json
+
+{
+  "user_id": 3,
+  "bank_name": "Bank IKD",
+  "bank_account_number": "1213141516",
+  "balance": 1500000
+}
+
+### get all account
+GET http://localhost:3000/v1/accounts
+
+### get account by id
+GET http://localhost:3000/v1/accounts/3
+
+
+
+### send money from sender to receiver
+POST http://localhost:3000/v1/transactions
+Content-Type: application/json
+
+{
+  "sender_account_id": 2,
+  "receiver_account_id": 4,
+  "amount": 500000
+}
+
+### get all transaction
+GET http://localhost:3000/v1/transactions
+
+### get transaction by id
+GET http://localhost:3000/v1/transactions/1
+
+
